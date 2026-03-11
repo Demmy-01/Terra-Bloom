@@ -97,7 +97,7 @@ export default function BlogPost1Page() {
       <div className="container" style={{ paddingTop: '3rem', paddingBottom: '5rem', maxWidth: '1040px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2.5rem' }}>
           {/* ─── ARTICLE ─────────────────────────────── */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 280px', gap: '2rem', alignItems: 'start' }}>
+          <div className="blog-article-grid">
             <article>
               {/* Category */}
               <div style={{
@@ -132,7 +132,7 @@ export default function BlogPost1Page() {
               {/* Hero image */}
               <div style={{ borderRadius: '1.25rem', overflow: 'hidden', marginBottom: '2rem' }}>
                 <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80" alt="Organic vegetables"
-                  style={{ width: '100%', height: '22rem', objectFit: 'cover' }} />
+                  className="blog-hero-img" style={{ borderRadius: '1.25rem' }} />
               </div>
 
               {/* Article body */}
