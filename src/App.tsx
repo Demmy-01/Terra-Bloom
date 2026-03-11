@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import AnnouncementBar from './components/AnnouncementBar';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import DisclaimerModal from './components/DisclaimerModal';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProductsPage from './pages/ProductsPage';
@@ -22,7 +22,7 @@ function ScrollToTop() {
 function Layout() {
   return (
     <>
-      <AnnouncementBar />
+      <DisclaimerModal />
       <Navbar />
       <main>
         <Routes>
