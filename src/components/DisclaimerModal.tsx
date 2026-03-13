@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Leaf, Gift, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { X, Leaf, CheckCircle } from 'lucide-react';
 
 export default function DisclaimerModal() {
   const [open, setOpen] = useState(false);
@@ -96,82 +95,42 @@ export default function DisclaimerModal() {
                   </span>
                 </div>
 
-                <div style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                  padding: '0.375rem 0.875rem', borderRadius: '9999px',
-                  backgroundColor: '#D4A853',
-                  fontFamily: 'var(--font-label)', fontSize: '0.75rem', fontWeight: 700,
-                  color: '#1a1a1a', marginBottom: '0.875rem',
-                }}>
-                  <Gift size={13} />
-                  LIMITED OFFER — NEW MEMBERS ONLY
-                </div>
-
                 <h2 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: 'clamp(1.5rem, 4vw, 2.1rem)',
+                  fontSize: 'clamp(1.5rem, 4vw, 1.8rem)',
                   fontWeight: 700, color: 'white', lineHeight: 1.15, marginBottom: '0.5rem',
                 }}>
-                  Welcome to TerraBloom!<br />
-                  <em style={{ color: '#D4A853' }}>Your First Box is Free.</em>
+                  Important Notice<br />
+                  <em style={{ color: '#D4A853' }}>Educational Use Only</em>
                 </h2>
                 <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', lineHeight: 1.65 }}>
-                  Hand-picked, certified organic produce delivered straight to your door — no credit card required.
+                  Please read the following information regarding the purpose and nature of this website.
                 </p>
               </div>
 
               {/* ── Body ── */}
               <div style={{ padding: '1.75rem 2rem 2rem' }}>
-                {/* Disclaimer box */}
-                <div style={{
-                  padding: '1rem 1.25rem', borderRadius: '1rem',
-                  backgroundColor: '#F1F8F4',
-                  border: '1px solid rgba(27,77,62,0.1)',
-                  marginBottom: '1.5rem',
-                }}>
-                  <p style={{ fontFamily: 'var(--font-label)', fontSize: '0.725rem', fontWeight: 700, color: '#1B4D3E', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.4rem' }}>
-                    🌿 Important Disclaimer
-                  </p>
-                  <p style={{ fontSize: '0.82rem', color: '#5C5C5C', lineHeight: 1.65 }}>
-                    TerraBloom Organics is a demonstration website built for portfolio purposes. All products, prices, subscriptions, and promotions shown are fictional. No real transactions or deliveries occur. By continuing, you acknowledge this is a portfolio project.
-                  </p>
-                </div>
-
                 {/* Feature list */}
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.575rem', marginBottom: '1.75rem' }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.75rem' }}>
                   {[
-                    'USDA certified organic — lab tested for pesticides',
-                    '12–15 seasonal fruits & vegetables per box',
-                    'Farm-to-door within 48 hours of harvest',
-                    'Zero-waste, 100% compostable packaging',
-                    'Skip, pause, or cancel anytime — no penalties',
-                  ].map(f => (
-                    <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', fontSize: '0.875rem', color: '#1a1a1a' }}>
-                      <CheckCircle size={17} color="#1B4D3E" fill="#E8F5E9" style={{ flexShrink: 0, marginTop: '0.1rem' }} />
-                      {f}
+                    'The information provided on this website is intended for educational purposes only. While every effort has been made to ensure the accuracy and reliability of the content, the university does not guarantee its completeness or effectiveness. This website will be deactivated once the course is completed. Some images used on this site have been sourced from the internet and are included for educational and practice purposes only. If you are the copyright owner of any image and believe it has been used without proper attribution, please contact us, and we will make the necessary corrections.',
+                    'The views expressed on this site do not necessarily reflect the official policies or positions of the university. The university is not responsible for any errors or omissions or the results obtained from using this information.',
+                    'By using this website, you acknowledge and agree to these terms',
+                  ].map((f, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', fontSize: '0.875rem', color: '#1a1a1a', lineHeight: 1.6 }}>
+                      <CheckCircle size={20} color="#1B4D3E" fill="#E8F5E9" style={{ flexShrink: 0, marginTop: '0.1rem' }} />
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Actions */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  <Link to="/free-box" onClick={dismiss} className="btn btn-primary"
+                  <button onClick={dismiss} className="btn btn-primary"
                     style={{ width: '100%', justifyContent: 'center', padding: '1rem', fontSize: '0.975rem' }}>
-                    🌿 Claim My Free Box Now
-                  </Link>
-                  <button onClick={dismiss} style={{
-                    width: '100%', padding: '0.875rem', borderRadius: '9999px',
-                    border: '1.5px solid rgba(27,77,62,0.2)', background: 'transparent',
-                    color: '#5C5C5C', fontFamily: 'var(--font-label)', fontWeight: 500,
-                    fontSize: '0.875rem', cursor: 'pointer',
-                  }}>
-                    I'll explore first — remind me later
+                    I acknowledge and agree
                   </button>
                 </div>
-
-                <p style={{ textAlign: 'center', fontSize: '0.75rem', color: '#aaa', marginTop: '1rem', fontFamily: 'var(--font-label)' }}>
-                  Use code <strong style={{ color: '#1B4D3E' }}>BLOOM25</strong> at checkout for free delivery.
-                </p>
               </div>
             </motion.div>
           </div>
