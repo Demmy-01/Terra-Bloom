@@ -65,7 +65,7 @@ export default function DisclaimerModal() {
               {/* ── Green header ── */}
               <div style={{
                 backgroundColor: '#1B4D3E',
-                padding: '2rem 2rem 1.5rem',
+                padding: 'clamp(1.5rem, 5vw, 2rem) clamp(1.25rem, 5vw, 2rem) clamp(1.25rem, 5vw, 1.5rem)',
                 borderRadius: '1.75rem 1.75rem 0 0',
                 position: 'relative', overflow: 'hidden',
               }}>
@@ -97,27 +97,27 @@ export default function DisclaimerModal() {
 
                 <h2 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: 'clamp(1.5rem, 4vw, 1.8rem)',
+                  fontSize: 'clamp(1.3rem, 6vw, 1.8rem)',
                   fontWeight: 700, color: 'white', lineHeight: 1.15, marginBottom: '0.5rem',
                 }}>
                   Important Notice<br />
                   <em style={{ color: '#D4A853' }}>Educational Use Only</em>
                 </h2>
-                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', lineHeight: 1.65 }}>
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: 'clamp(0.8rem, 3.5vw, 0.9rem)', lineHeight: 1.65 }}>
                   Please read the following information regarding the purpose and nature of this website.
                 </p>
               </div>
 
               {/* ── Body ── */}
-              <div style={{ padding: '1.75rem 2rem 2rem' }}>
+              <div style={{ padding: 'clamp(1.25rem, 5vw, 1.75rem) clamp(1.25rem, 5vw, 2rem) clamp(1.5rem, 5vw, 2rem)' }}>
                 {/* Feature list */}
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '1.75rem' }}>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 'clamp(0.75rem, 3vw, 1rem)', marginBottom: '1.75rem' }}>
                   {[
                     'The information provided on this website is intended for educational purposes only. While every effort has been made to ensure the accuracy and reliability of the content, the university does not guarantee its completeness or effectiveness. This website will be deactivated once the course is completed. Some images used on this site have been sourced from the internet and are included for educational and practice purposes only. If you are the copyright owner of any image and believe it has been used without proper attribution, please contact us, and we will make the necessary corrections.',
                     'The views expressed on this site do not necessarily reflect the official policies or positions of the university. The university is not responsible for any errors or omissions or the results obtained from using this information.',
                     'By using this website, you acknowledge and agree to these terms',
                   ].map((f, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', fontSize: '0.875rem', color: '#1a1a1a', lineHeight: 1.6 }}>
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', fontSize: 'clamp(0.8rem, 3.5vw, 0.875rem)', color: '#1a1a1a', lineHeight: 1.6 }}>
                       <CheckCircle size={20} color="#1B4D3E" fill="#E8F5E9" style={{ flexShrink: 0, marginTop: '0.1rem' }} />
                       <span>{f}</span>
                     </li>
